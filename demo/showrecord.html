@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <div id="heightChartContainer" style="height: 400px; width: 100%;"></div>
+
+    <div id="weightChartContainer" style="height: 400px; width: 100%;"></div>
+
+        
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="lib/js/jquery-1.12.4.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="lib/js/canvasjs.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+          var chart = new CanvasJS.Chart("heightChartContainer", {
+      title: {
+        text: "30天身高变化"
+      },
+      axisX: {
+        interval: 10
+      },
+      data: [{
+        type: "line",
+        dataPoints: [
+          { x: 10, y: 45 },
+          { x: 20, y: 14 },
+          { x: 30, y: 20 },
+          { x: 40, y: 60 },
+          { x: 50, y: 50 },
+          { x: 60, y: 80 },
+          { x: 70, y: 40 }
+        ]
+      },{
+        type: "line",
+        dataPoints: [
+          { x: 10, y: 40 },
+          { x: 20, y: 10 },
+          { x: 30, y: 15 },
+          { x: 40, y: 55 },
+          { x: 50, y: 12 },
+          { x: 60, y: 12 },
+          { x: 70, y: 15 }
+        ]
+      }]
+    });
+    chart.render();
+
+     var weightChart = new CanvasJS.Chart("weightChartContainer", {
+      title: {
+        text: "30天体重变化"
+      },
+      axisX: {
+        interval: 10
+      },
+      data: [{
+        type: "line",
+        dataPoints: [
+          { x: 10, y: 5 },
+          { x: 20, y: 5.5 },
+          { x: 30, y: 5.6},
+          { x: 40, y: 5.6 },
+          { x: 50, y: 6},
+          { x: 60, y: 6.1 },
+          { x: 70, y: 6.2}
+        ]
+      }]
+    });
+    weightChart.render();
+
+      })
+    </script>
+  </body>
+</html>
