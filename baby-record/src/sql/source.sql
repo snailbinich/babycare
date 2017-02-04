@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `user_baby_rel` (
   `user_id` INT NULL,
   `baby_id` INT NULL,
   `create_time` DATETIME NULL,
-  `update_time` DATETIME NULL,
+  `modify_time` DATETIME NULL,
   PRIMARY KEY (`id`))
   ENGINE = InnoDB DEFAULT CHARSET=utf8;
 alter table `user_baby_rel` add unique index(user_id,baby_id);

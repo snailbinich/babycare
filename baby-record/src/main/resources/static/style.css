@@ -1,0 +1,10 @@
+.baby-info{
+    margin-bottom: 2em;
+    border-top: 2px solid blue;
+}
+.baby-info .img-head{
+    width: 98%;
+    height: 98%;
+    padding: 1% 1% 1% 1%;
+}
+

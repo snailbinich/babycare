@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cmn" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>家有娃</title>
+
+    <!-- Bootstrap -->
+    <link th:href="@{/lib/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/style.css}" rel="stylesheet" />
+
+
+</head>
+<body>
+<div id="heightChartContainer" style="height: 400px; width: 100%;"></div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script th:src="@{/lib/js/jquery-1.12.4.min.js}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script th:src="@{/lib/js/bootstrap.min.js}"></script>
+<script th:src="@{/lib/js/canvasjs.min.js}"></script>
+<script type="text/javascript">
+    function getDays(birthday, recordDate){
+        return (recordDate-birthday)/(24*3600*1000);
+    }
+    function drawLine(chartId, title, dataPoints){
+
+        var chart = new CanvasJS.Chart(chartId, {
+            "title": {
+                "text": title
+            },
+            "axisX": {
+                "interval": 10
+            },
+            "data": [{
+                "type": "line",
+                "dataPoints": dataPoints
+            }]
+        });
+        chart.render();
+
+    }
+    $(function(){
+
+
+        $.get("/record/data?babyId=4",function(resp){
+            console.log(resp);
+            points=[];
+            birthday=resp["data"]["birthday"];
+            $.each(resp["data"]["records"], function (id,item) {
+                days = getDays(birthday, item["createTime"]);
+                points.push({"x":days,"y":item["height"]});
+            })
+            console.log(points)
+            drawLine("heightChartContainer","身高变化图", points);
+        });
+
+    })
+</script>
+</body>
+</html>

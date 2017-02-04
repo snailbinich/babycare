@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cmn" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>家有娃</title>
+
+    <!-- Bootstrap -->
+    <link th:href="@{/lib/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/style.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="row">
+    <div class="col-xs-12">
+        <form  method="POST" enctype="multipart/form-data" action="/baby/add">
+            <div class="form-group">
+                <label for="inputNickName" class="col-sm-2 control-label">宝宝昵称</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="nickName" id="inputNickName" placeholder="给宝宝起一个可爱的昵称吧">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputBirthday" class="col-sm-2 control-label">出生日期</label>
+                <div class="col-sm-10">
+                    <input type="date" name="birthday" class="form-control" id="inputBirthday" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputHeadImg" class="col-sm-2 control-label">宝宝头像</label>
+                <div class="col-sm-10">
+                    <input type="file" id="inputHeadImg">
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn btn-success btn-lg btn-block">保存记录</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script th:src="@{/lib/js/jquery-1.12.4.min.js}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script th:src="@{/lib/js/bootstrap.min.js}"></script>
+</body>
+</html>

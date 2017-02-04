@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cmn" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>家有娃</title>
+
+    <!-- Bootstrap -->
+    <link th:href="@{/lib/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="row baby-info" th:each="baby : ${babies}">
+    <div class="col-xs-4">
+        <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=843923426,3827995240&fm=21&gp=0.jpg"
+             class=" img-circle img-head" alt="Responsive image" />
+        <p style="margin-left: 30%;margin-top: 10%" th:text="${baby.nickName}">
+            宝宝: 方健
+        </p>
+    </div>
+    <div class="col-xs-8">
+        <table class="table">
+            <tr>
+                <td >
+                    已出生
+                    <span th:text="${T(com.jiayouwa.util.TemplateUtil).countBornDays(baby.birthday)}">123</span>
+                    天
+                </td>
+            </tr>
+            <tr><td>身高:158cm. 体重45kg</td></tr>
+            <tr><td><a class="button" th:href="'/record/show?babyId='+${baby.id}">查看成长曲线</a></td></tr>
+            <tr><td><a class="button" th:href="'/record/'+${baby.id}+'/add'">记录身高体重</a></td></tr>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <a  class="button btn btn-success btn-lg btn-block" href="/baby/add">添加宝宝</a>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script th:src="@{/lib/js/jquery-1.12.4.min.js}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script th:src="@{/lib/js/bootstrap.min.js}"></script>
+</body>
+</html>

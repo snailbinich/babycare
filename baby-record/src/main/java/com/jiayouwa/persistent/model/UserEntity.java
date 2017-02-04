@@ -6,31 +6,28 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by zhaoyan on 2017/1/24.
+ * Created by zhaoyan on 2017/2/4.
  */
 @Entity
 @Data
-@Table(name = "baby_record")
-public class BabyRecordEntity {
-
+@Table(name = "user")
+public class UserEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-
-    private long babyId;
-    private int height;
-    private int weight;
+    private Long uid;
+    private String nickName;
+    private String token;
     private Timestamp createTime;
     private Timestamp modifyTime;
 
     @PrePersist
     protected void onCreate() {
+        createTime = new Timestamp(System.currentTimeMillis());
         modifyTime = new Timestamp(System.currentTimeMillis());
     }
 
     @PreUpdate
-    protected  void onUpdate(){
+    protected void onUpdate() {
         modifyTime = new java.sql.Timestamp(System.currentTimeMillis());
-    }
 
+    }
 }
