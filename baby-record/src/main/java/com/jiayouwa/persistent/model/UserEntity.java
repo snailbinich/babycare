@@ -12,10 +12,16 @@ import java.sql.Timestamp;
 @Data
 @Table(name = "user")
 public class UserEntity {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long uid;
+    private String openId;
+    private String accessToken;
+    private Timestamp accessTokenInvalidTime;
+    private String refreshToken;
     private String nickName;
-    private String token;
+
     private Timestamp createTime;
     private Timestamp modifyTime;
 

@@ -15,11 +15,16 @@ DROP TABLE IF EXISTS `user` ;
 
 CREATE TABLE IF NOT EXISTS `user` (
   `uid` BIGINT(11) NOT NULL AUTO_INCREMENT,
-  `nick_name` VARCHAR(45) NULL,
-  `token` VARCHAR(45) NULL,
+  `open_id` VARCHAR(255) NULL,
+  `access_token` VARCHAR(255) NULL,
+  `access_token_invalid_time` DATETIME NULL,
+  `refresh_token` VARCHAR(255) NULL,
+  `nick_name` VARCHAR(255) NULL,
   `create_time` DATETIME NULL,
   `modify_time` DATETIME NULL,
-  PRIMARY KEY (`uid`))
+  PRIMARY KEY (`uid`),
+  UNIQUE KEY (`open_id`)
+)
   ENGINE = InnoDB  DEFAULT CHARSET=utf8;
 
 

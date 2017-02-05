@@ -31,7 +31,7 @@ public class BabyInfoRepoTests {
 
     @Test
     public void testGetByUserId(){
-        List<BabyInfoEntity> babies = babyInfoRepo.getBabiesByUserId("1");
+        List<BabyInfoEntity> babies = babyInfoRepo.getBabiesByUserId(1l);
         for (BabyInfoEntity baby:babies){
             System.out.println(baby);
         }

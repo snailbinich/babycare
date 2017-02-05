@@ -17,6 +17,7 @@
 </head>
 <body>
 <div id="heightChartContainer" style="height: 400px; width: 100%;"></div>
+<div id="weightChartContainer" style="height: 400px; width: 100%;"></div>
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -24,7 +25,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script th:src="@{/lib/js/bootstrap.min.js}"></script>
 <script th:src="@{/lib/js/canvasjs.min.js}"></script>
-<script type="text/javascript">
+<script type="text/javascript" th:inline="javascript">
     function getDays(birthday, recordDate){
         return (recordDate-birthday)/(24*3600*1000);
     }
@@ -46,18 +47,22 @@
 
     }
     $(function(){
+        var babyId = /*[[${babyId}]]*/ 1;
 
-
-        $.get("/record/data?babyId=4",function(resp){
+        $.get("/record/data?babyId="+babyId,function(resp){
             console.log(resp);
-            points=[];
+            heightPoints=[];
+            weightPoints=[];
+
             birthday=resp["data"]["birthday"];
             $.each(resp["data"]["records"], function (id,item) {
                 days = getDays(birthday, item["createTime"]);
-                points.push({"x":days,"y":item["height"]});
+                heightPoints.push({"x":days,"y":item["height"]});
+                weightPoints.push({"x":days,"y":item["weight"]});
             })
-            console.log(points)
-            drawLine("heightChartContainer","身高变化图", points);
+            console.log(heightPoints)
+            drawLine("heightChartContainer","身高变化图", heightPoints);
+            drawLine("weightChartContainer","体重变化图", weightPoints);
         });
 
     })

@@ -48,8 +48,8 @@ public class RecordController {
     }
 
     @RequestMapping(value = "/show",method = RequestMethod.GET)
-    public String showRecord(){
-
+    public String showRecord(@RequestParam Long babyId, Map<String, Object> map){
+        map.put("babyId", babyId);
         return "/showRecord";
     }
 
