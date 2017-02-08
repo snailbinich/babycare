@@ -21,6 +21,9 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
     @Value("${webapp.wx.appSecret}")
     private String appSecret;
 
+
+    private  String headImgPrefix = "http://babycare-1253299307.costj.myqcloud.com";
+
     @Autowired
     private SessionInterceptor sessionInterceptor;
 

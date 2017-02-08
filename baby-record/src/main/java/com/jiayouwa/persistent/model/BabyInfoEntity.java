@@ -19,10 +19,11 @@ public class BabyInfoEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String nickName;
+    private String headImg;
     private Date birthday;
     private int birthWeight;
-//    private int provinceId;
-    private String province;
+    private int provinceId;
+    private int gender;
     private String bloodType;
 
     private Timestamp createTime;

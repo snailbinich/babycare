@@ -17,10 +17,34 @@
 <div class="row">
     <div class="col-xs-12">
         <form  method="POST" enctype="multipart/form-data" action="/baby/add">
+
             <div class="form-group">
                 <label for="inputNickName" class="col-sm-2 control-label">宝宝昵称</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" name="nickName" id="inputNickName" placeholder="给宝宝起一个可爱的昵称吧">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputHeadImg" class="col-sm-2 control-label">宝宝头像</label>
+                <div class="col-sm-10">
+                    <input type="file" name="headImg" id="inputHeadImg">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputNickName" class="col-sm-2 control-label">宝宝性别</label>
+                <div class="col-sm-10">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="gender"  value="0" checked>
+                            女宝
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="gender"  value="1" >
+                            男宝
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="form-group">
@@ -30,11 +54,27 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputHeadImg" class="col-sm-2 control-label">宝宝头像</label>
+                <label for="inputBirthday" class="col-sm-2 control-label">出生身高</label>
                 <div class="col-sm-10">
-                    <input type="file" id="inputHeadImg">
+                    <input type="number" name="birthHeight" class="form-control"  placeholder="cm">
                 </div>
             </div>
+            <div class="form-group">
+                <label for="inputBirthday" class="col-sm-2 control-label">出生体重</label>
+                <div class="col-sm-10">
+                    <input type="number" name="birthWeight" class="form-control" placeholder="kg" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputBirthday" class="col-sm-2 control-label">省份</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="provinceId" >
+                        <option th:each="p : ${provinces}" th:value="${p.id}" th:text="${p.name}">1</option>
+                    </select>
+                </div>
+            </div>
+
+
             <div class="row">
                 <button type="submit" class="btn btn-success btn-lg btn-block">保存记录</button>
             </div>

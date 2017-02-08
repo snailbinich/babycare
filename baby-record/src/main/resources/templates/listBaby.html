@@ -14,10 +14,14 @@
     <link th:href="@{/style.css}" rel="stylesheet" />
 </head>
 <body>
-
+<div class="row" th:if="${#lists.isEmpty(babies)}">
+    <div class="col-xs-10 col-xs-offset-1">
+    <p class="text-primary">还没有添加宝宝信息,赶紧下面的按钮添加吧</p>
+    </div>
+</div>
 <div class="row baby-info" th:each="baby : ${babies}">
     <div class="col-xs-4">
-        <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=843923426,3827995240&fm=21&gp=0.jpg"
+        <img th:src="${T(com.jiayouwa.util.TemplateUtil).headPrefix+baby.headImg}"
              class=" img-circle img-head" alt="Responsive image" />
         <p style="margin-left: 30%;margin-top: 10%" th:text="${baby.nickName}">
             宝宝: 方健

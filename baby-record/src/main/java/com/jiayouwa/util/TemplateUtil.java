@@ -10,6 +10,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class TemplateUtil {
 
+    public static final String headPrefix = "http://babycare-1253299307.costj.myqcloud.com/";
+
     public static int countBornDays(Date birthday){
         if(birthday == null){
             return 0;
