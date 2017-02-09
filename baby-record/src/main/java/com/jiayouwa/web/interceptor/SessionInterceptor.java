@@ -2,7 +2,7 @@ package com.jiayouwa.web.interceptor;
 
 import com.jiayouwa.component.Constants;
 import com.jiayouwa.service.SessionService;
-import groovy.util.logging.Slf4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
@@ -30,6 +30,9 @@ public class SessionInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
+
+        System.out.println("interceptor prehandle");
+
         HttpSession session = httpServletRequest.getSession();
         Object uidObj = session.getAttribute(Constants.UID);
         if(uidObj == null){
