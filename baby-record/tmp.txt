@@ -1,0 +1,101 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building baby-record 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.10:tree (default-cli) @ baby-record ---
+[INFO] com.jiayouwa:baby-record:war:0.0.1-SNAPSHOT
+[INFO] +- org.springframework.boot:spring-boot-starter-data-jpa:jar:1.4.3.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter:jar:1.4.3.RELEASE:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot:jar:1.4.3.RELEASE:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot-autoconfigure:jar:1.4.3.RELEASE:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot-starter-logging:jar:1.4.3.RELEASE:compile
+[INFO] |  |  |  +- ch.qos.logback:logback-classic:jar:1.1.8:compile
+[INFO] |  |  |  |  \- ch.qos.logback:logback-core:jar:1.1.8:compile
+[INFO] |  |  |  +- org.slf4j:jul-to-slf4j:jar:1.7.22:compile
+[INFO] |  |  |  \- org.slf4j:log4j-over-slf4j:jar:1.7.22:compile
+[INFO] |  |  \- org.yaml:snakeyaml:jar:1.17:runtime
+[INFO] |  +- org.springframework.boot:spring-boot-starter-aop:jar:1.4.3.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-aop:jar:4.3.5.RELEASE:compile
+[INFO] |  |  \- org.aspectj:aspectjweaver:jar:1.8.9:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-jdbc:jar:1.4.3.RELEASE:compile
+[INFO] |  |  +- org.apache.tomcat:tomcat-jdbc:jar:8.5.6:compile
+[INFO] |  |  |  \- org.apache.tomcat:tomcat-juli:jar:8.5.6:compile
+[INFO] |  |  \- org.springframework:spring-jdbc:jar:4.3.5.RELEASE:compile
+[INFO] |  +- org.hibernate:hibernate-core:jar:5.0.11.Final:compile
+[INFO] |  |  +- org.jboss.logging:jboss-logging:jar:3.3.0.Final:compile
+[INFO] |  |  +- org.hibernate.javax.persistence:hibernate-jpa-2.1-api:jar:1.0.0.Final:compile
+[INFO] |  |  +- org.javassist:javassist:jar:3.20.0-GA:compile
+[INFO] |  |  +- antlr:antlr:jar:2.7.7:compile
+[INFO] |  |  +- org.jboss:jandex:jar:2.0.0.Final:compile
+[INFO] |  |  +- dom4j:dom4j:jar:1.6.1:compile
+[INFO] |  |  \- org.hibernate.common:hibernate-commons-annotations:jar:5.0.1.Final:compile
+[INFO] |  +- org.hibernate:hibernate-entitymanager:jar:5.0.11.Final:compile
+[INFO] |  +- javax.transaction:javax.transaction-api:jar:1.2:compile
+[INFO] |  +- org.springframework.data:spring-data-jpa:jar:1.10.6.RELEASE:compile
+[INFO] |  |  +- org.springframework.data:spring-data-commons:jar:1.12.6.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-orm:jar:4.3.5.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-context:jar:4.3.5.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-tx:jar:4.3.5.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-beans:jar:4.3.5.RELEASE:compile
+[INFO] |  |  +- org.slf4j:slf4j-api:jar:1.7.22:compile
+[INFO] |  |  \- org.slf4j:jcl-over-slf4j:jar:1.7.22:compile
+[INFO] |  \- org.springframework:spring-aspects:jar:4.3.5.RELEASE:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-web:jar:1.4.3.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-tomcat:jar:1.4.3.RELEASE:compile
+[INFO] |  |  +- org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.6:compile
+[INFO] |  |  +- org.apache.tomcat.embed:tomcat-embed-el:jar:8.5.6:compile
+[INFO] |  |  \- org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.5.6:compile
+[INFO] |  +- org.hibernate:hibernate-validator:jar:5.2.4.Final:compile
+[INFO] |  |  +- javax.validation:validation-api:jar:1.1.0.Final:compile
+[INFO] |  |  \- com.fasterxml:classmate:jar:1.3.3:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.8.5:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.8.5:compile
+[INFO] |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.8.5:compile
+[INFO] |  +- org.springframework:spring-web:jar:4.3.5.RELEASE:compile
+[INFO] |  \- org.springframework:spring-webmvc:jar:4.3.5.RELEASE:compile
+[INFO] |     \- org.springframework:spring-expression:jar:4.3.5.RELEASE:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-thymeleaf:jar:1.4.3.RELEASE:compile
+[INFO] |  +- org.thymeleaf:thymeleaf-spring4:jar:2.1.5.RELEASE:compile
+[INFO] |  |  \- org.thymeleaf:thymeleaf:jar:2.1.5.RELEASE:compile
+[INFO] |  |     +- ognl:ognl:jar:3.0.8:compile
+[INFO] |  |     \- org.unbescape:unbescape:jar:1.1.0.RELEASE:compile
+[INFO] |  \- nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:jar:1.4.0:compile
+[INFO] |     \- org.codehaus.groovy:groovy:jar:2.4.7:compile
+[INFO] +- net.sourceforge.nekohtml:nekohtml:jar:1.9.21:compile
+[INFO] |  \- xerces:xercesImpl:jar:2.10.0:compile
+[INFO] |     \- xml-apis:xml-apis:jar:1.4.01:compile
+[INFO] +- joda-time:joda-time:jar:2.9.7:compile
+[INFO] +- org.apache.httpcomponents:httpclient:jar:4.3.4:compile
+[INFO] |  +- org.apache.httpcomponents:httpcore:jar:4.4.5:compile
+[INFO] |  \- commons-codec:commons-codec:jar:1.10:compile
+[INFO] +- com.qcloud:cos_api:jar:4.2:compile
+[INFO] |  +- org.apache.httpcomponents:httpmime:jar:4.5.2:compile
+[INFO] |  +- org.json:json:jar:20140107:compile
+[INFO] |  \- junit:junit:jar:4.12:compile
+[INFO] +- org.projectlombok:lombok:jar:1.16.12:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:1.4.3.RELEASE:test
+[INFO] |  +- org.springframework.boot:spring-boot-test:jar:1.4.3.RELEASE:test
+[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:1.4.3.RELEASE:test
+[INFO] |  +- com.jayway.jsonpath:json-path:jar:2.2.0:test
+[INFO] |  |  \- net.minidev:json-smart:jar:2.2.1:test
+[INFO] |  |     \- net.minidev:accessors-smart:jar:1.1:test
+[INFO] |  |        \- org.ow2.asm:asm:jar:5.0.3:test
+[INFO] |  +- org.assertj:assertj-core:jar:2.5.0:test
+[INFO] |  +- org.mockito:mockito-core:jar:1.10.19:test
+[INFO] |  |  \- org.objenesis:objenesis:jar:2.1:test
+[INFO] |  +- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO] |  +- org.hamcrest:hamcrest-library:jar:1.3:test
+[INFO] |  +- org.skyscreamer:jsonassert:jar:1.3.0:test
+[INFO] |  +- org.springframework:spring-core:jar:4.3.5.RELEASE:compile
+[INFO] |  \- org.springframework:spring-test:jar:4.3.5.RELEASE:test
+[INFO] \- mysql:mysql-connector-java:jar:5.1.40:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.088 s
+[INFO] Finished at: 2017-02-09T21:23:19+08:00
+[INFO] Final Memory: 24M/437M
+[INFO] ------------------------------------------------------------------------
+[WARNING] The requested profile "nexus" could not be activated because it does not exist.
