@@ -11,6 +11,6 @@ public class HelloWorldController {
 
     @RequestMapping("/")
     public String sayHello(){
-        return "Hi, Java on Mac";
+        return  "redirect:/baby/list";
     }
 }
